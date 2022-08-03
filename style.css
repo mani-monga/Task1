@@ -1,0 +1,312 @@
+@import url("http://fonts.cdnfonts.com/css/avenir");
+* {
+  font-family: "Avenir", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 50px 0;
+}
+.heading {
+  font-weight: 900;
+  font-size: 28px;
+}
+.catergory-box {
+  border-bottom: 1px solid black;
+  padding: 0 80px;
+}
+.catergory-box ul {
+  display: flex;
+  gap: 60px;
+}
+.catergory-box ul a {
+  position: relative;
+  list-style: none;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: center;
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+.catergory-box ul a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0040a5;
+  transform: scaleX(0);
+  transition: 0.5s;
+}
+
+.catergory-box ul a.active::after {
+  transform: scaleX(1);
+}
+.catergory-box ul a.active {
+  color: #1637a0;
+}
+
+.brochurecontainer {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  row-gap: 120px;
+  margin-bottom: 300px;
+}
+.brochure {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 65px 0;
+  gap: 15px;
+}
+
+.list li {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+}
+.herobtn {
+  width: 200px;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #0040a5;
+  color: #0040a5;
+  background: white;
+  border-radius: 25px;
+  height: 44px;
+}
+.herobtn svg {
+  font-size: 20px;
+  font-weight: 900;
+  color: greenyellow;
+  margin: 0 5px;
+}
+
+.brochure a {
+  color: #1637a0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.cardtitle {
+  display: flex;
+  width: 65%;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.cardimage {
+  width: 300px;
+  height: 150px;
+}
+
+.brochure ul li {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.downloadmodal {
+  position: fixed;
+  height: 300px;
+  bottom: 0;
+  width: 100%;
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.closebtn{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 10px;
+  font-size: 1.5em;
+  border: none;
+  color: #1637a0;
+}
+.modalheading {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+.btngrp{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+.btngrp button {
+  background: #1637a0;
+  width: 200px;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 25px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  transition: 0.5s;
+}
+.btngrp button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btngrp button:hover,
+.herobtn:hover {
+  opacity: 0.6;
+}
+
+.mapcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.downloadcontainer {
+  position: relative;
+  background-color: white;
+  border: 1px solid #c2c2c2;
+  height: 90px;
+  width: 185px;
+}
+.downloadcontainer img {
+  height: 100%;
+}
+.dashed {
+  width: 185px;
+  border: 1px dashed #9b9b9b;
+}
+.downloadcontainer button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  position: absolute;
+  right: 3px;
+}
+.mobile {
+  display: none;
+}
+.pc {
+  display: block;
+}
+
+@media screen and (max-width: 480px) {
+  .catergory-box {
+    display: none;
+  }
+  .brochurecontainer{
+    row-gap: 60px;
+  }
+  .list {
+    display: none;
+  }
+  .cardtitle {
+    width: 100%;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 28px;
+  }
+
+  .cardimage img {
+    width: 300px;
+    height: 150px;
+  }
+
+  .herobtn {
+    width: 300px;
+  }
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .downloadmodal {
+    height: 410px;
+    justify-content: center;
+    gap: 20px;
+  }
+  .closebtn {
+    top: 0;
+    right: 20px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .mapcontainer {
+    display: flex;
+    max-width: 95%;
+    box-sizing: border-box;
+    justify-content: center;
+    gap: 10px;
+  }
+  .downloadcontainer {
+    flex-basis: 33%;
+    height: 70px;
+    
+  }
+  .downloadcontainer img {
+    width: 100%;
+  }
+  .btngrp {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+  #download {
+    width: 70%;
+  }
+  .linkgrp {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+  .linkgrp a {
+    color: #0040a5;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: center;
+  }
+}
